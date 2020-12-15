@@ -24,14 +24,12 @@ export default function Appointment(props) {
   const DELETING = "DELETING";
   const CONFIRM = "CONFIRM";
   const EDIT = "EDIT";
-  const ERROR_NO_VALUE = "ERROR_NO_VALUE";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
   // Child function of Application
   const save = function(name, interviewer) {
     console.log("student name", name, "interviewer id", interviewer)
-    if(name && interviewer){
       // First level of State saving
       const interview = {
       student: name,
@@ -41,10 +39,7 @@ export default function Appointment(props) {
       props.bookInterview(props.id, interview)
       .then(() => { transition(SHOW) })
       .catch(err => transition(ERROR_SAVE, true))
-    } else {
-      transition(ERROR_NO_VALUE)
-    }
-   
+    
   }
 
   const confirm = function(){
@@ -129,14 +124,6 @@ export default function Appointment(props) {
             )
             }
 
-            { mode === ERROR_NO_VALUE && (
-              <Error 
-              message={"Please enter Student Name and/or Select an Interviewer"}
-              onClose={back}
-              />
-            )
-
-            }
       </article>    
   )
 }
