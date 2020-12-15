@@ -1,11 +1,22 @@
+// Dependency Imports
 import React from "react";
-import InterviewerListItem from "components/InterviewerListItem";
+import PropTypes from 'prop-types';
 
+// Styling Imports
 import "components/InterviewerList.scss";
 
+// Component Imports
+import InterviewerListItem from "components/InterviewerListItem";
+
+// Proptypes
+InterviewerList.propTypes = {
+  interviewers: PropTypes.array.isRequired
+}
+
 export default function InterviewerList (props) {
+  
+
   const interviewers = props.interviewers.map(interviewer => {
-    // console.log(interviewers)
     return (
       <InterviewerListItem 
         key={interviewer.id}
@@ -15,7 +26,8 @@ export default function InterviewerList (props) {
         onChange={(id) => props.onChange(interviewer.id)}
       />
     )
-  })
+  });
+
   return (
       <section className="interviewers">
         <h4 className="interviewers__header text--light">Interviewer</h4>
@@ -24,4 +36,4 @@ export default function InterviewerList (props) {
         </ul>
       </section>
   )
-}
+};

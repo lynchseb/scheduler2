@@ -1,3 +1,4 @@
+// Dependency Imports
 import React, { useState } from "react";
 
 export default function useVisualMode(initialViewMode){
@@ -5,7 +6,7 @@ export default function useVisualMode(initialViewMode){
   const [history, setHistory] = useState([initialViewMode]);
 
   function transition(newMode, replace) {
-    console.log("Please while while we Transition to new Visual Mode")
+    console.log(`Please while while we Transition from ${mode} to new Visual Mode`)
     setHistory(history => {
       if (replace) {
         const _history = [...history];
@@ -27,6 +28,6 @@ export default function useVisualMode(initialViewMode){
       setMode(_history[_history.length - 1]);
       return _history;
     });
-  }
+  };
   return { mode, transition, back };
 };

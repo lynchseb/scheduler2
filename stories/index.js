@@ -1,11 +1,13 @@
+// Dependency Imports
 import React, { Fragment } from "react";
-
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
+// Styling Imports
 import "index.scss";
 import "components/Appointment/styles.scss"
 
+// Component Imports
 import Button from "components/Button";
 import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
@@ -20,6 +22,7 @@ import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
 import Form from "components/Appointment/Form";
 
+// Stories Begin
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -223,6 +226,8 @@ storiesOf("InterviewerListItem", module)
         <Appointment id="last" time="1pm" />
       </Fragment>
     ))
+    
+// Stories End
 
   
       

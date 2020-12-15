@@ -1,7 +1,11 @@
+// Depdendency Imports
 import React from "react";
+
+// Component Imports
 import DayListItem from "components/DayListItem";
 
 export default function DayList(props){
+
   const day = props.days.map(day => {
     return (
       <ul>
@@ -16,4 +20,4 @@ export default function DayList(props){
     );
   });
   return day
-}
+};

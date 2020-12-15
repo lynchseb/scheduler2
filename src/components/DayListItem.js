@@ -1,10 +1,12 @@
+// Dependency Imports
 import React from "react";
 import classNames from "classnames"
 
+// Styling Imports
 import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
-  
+
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0
@@ -21,13 +23,11 @@ export default function DayListItem(props) {
       return `${spots} spots remaining`;
     }
   };
-  // console.log("my props", props)
-  // console.log("my prop name", props.name) 
-  // console.log("setDay is", props.setDay)
+
   return (
     <li className={dayClass} onClick={() => props.setDay(props.name)}>
       <h2>{props.name}</h2> 
       <h3>{formatSpots(props.spots)}</h3>
     </li>
   );
-}
+};

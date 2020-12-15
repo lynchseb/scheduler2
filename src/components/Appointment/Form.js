@@ -7,7 +7,7 @@ import InterviewerList from "components/InterviewerList";
 
 export default function Form (props) {
   const [name, setName] = useState(props.name || "")
-  const [interviewer, setInterviewer] = useState(props.value || null)
+  const [interviewer, setInterviewer] = useState(props.interviewer || null)
   
   const handleName = (event) => {
     event.preventDefault()
@@ -41,20 +41,21 @@ export default function Form (props) {
               placeholder="Enter Student Name"
               value={name}
               onChange={(event) => handleName(event)}
-              /*
-                This must be a controlled component
-              */
             />
           </form>
 
-          <InterviewerList interviewers={props.interviewers} value={interviewer} onChange={(id) => handleInterviewer(id)} />
+          <InterviewerList 
+          interviewers={props.interviewers} 
+          value={interviewer} 
+          onChange={(id) => handleInterviewer(id)} 
+          />
         </section>
 
         <section className="appointment__card-right">
           <section className="appointment__actions">
             <Button 
             danger
-            onClick={cancel}
+            onClick={() => props.onCancel()}
             >Cancel</Button>
 
             <Button 
