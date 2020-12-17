@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //Styles
 import "components/Appointment/styles.scss";
 
@@ -54,7 +53,7 @@ export default function Appointment(props) {
 
   const { mode, transition, back } = useVisualMode(props.interview ? SHOW : EMPTY);
   return (
-      <article className={"appointment"}>
+      <article className={"appointment"} data-testid="appointment">
             <Header 
               time={props.time} 
             />
@@ -94,7 +93,7 @@ export default function Appointment(props) {
                 id={props.id}
                 onDelete={() => transition(CONFIRM)}
                 onEdit={() => transition(EDIT)}
-              /> )
+              /> ) 
             }
 
             { mode === EDIT && (

@@ -1,6 +1,7 @@
 // Dependency Imports
 import { useState, useEffect } from "react";
 import axios from "axios";
+// import axios from "../_mocks_/axios";
 
 // Styling Imports
 import "components/Application.scss";
@@ -30,7 +31,7 @@ export default function useApplicationData() {
        interviewers: all[2].data
      }));
    })
-     .catch(error => console.log(error));
+   .catch(err => console.log(err))
   }, []);
   // API requests End
   
