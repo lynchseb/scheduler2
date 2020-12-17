@@ -24,11 +24,11 @@ npm run storybook
 
 ## Final Product
 
-!["Screenshot of Scheduler main page with empty appointments and one booked appointment"]
+!["Screenshot of Scheduler main page with an open form to create a new interview"](https://github.com/lynchseb/scheduler2/blob/master/docs/Create.png)
 
-!["Screenshot of booking an appointment process"]
+!["Screenshot of booked appointment and hover class"](https://github.com/lynchseb/scheduler2/blob/master/docs/Saved.png?raw=true)
 
-!["Screenshot of Confirmation to delete pop up message"]
+!["Screenshot of Confirmation to delete pop up message"](https://github.com/lynchseb/scheduler2/blob/master/docs/Confirm.png?raw=true)
 
 ## Dependencies
 
