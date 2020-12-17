@@ -8,7 +8,7 @@ export default function DayList(props){
 
   const day = props.days.map(day => {
     return (
-      <ul>
+      <ul key={day.id}>
         <DayListItem
           key={day.id}
           name={day.name}

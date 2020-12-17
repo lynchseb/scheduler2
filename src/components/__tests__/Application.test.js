@@ -2,7 +2,6 @@ import React from "react";
 import Application from "components/Application";
 import axios from "axios";
 
-
 import {  
   render, 
   cleanup, 
@@ -15,8 +14,6 @@ import {
   queryByText,
   queryByAltText
 } from "@testing-library/react";
-
-
 
 afterEach(cleanup);
 
@@ -152,11 +149,11 @@ describe("Application", () => {
 
     fireEvent.click(getByText(appointment, "Save"));
     await waitForElement(() =>
-      getByText(appointment, "Could not save appointment")
+      getByText(appointment, "There was an error while saving...")
     );
 
     expect(
-      getByText(appointment, "Could not save appointment")
+      getByText(appointment, "There was an error while saving...")
     ).toBeInTheDocument();
   });
   
@@ -174,17 +171,17 @@ describe("Application", () => {
     fireEvent.click(queryByAltText(appointment, "Delete"));
 
     expect(
-      getByText(appointment, "Are you sure you would like to delete?")
+      getByText(appointment, "Are you sure you would like to Delete?")
     ).toBeInTheDocument();
 
     fireEvent.click(queryByText(appointment, "Confirm"));
 
     await waitForElement(() =>
-      getByText(appointment, "Could not delete appointment")
+      getByText(appointment, "There was an error while deleting...")
     );
 
     expect(
-      getByText(appointment, "Could not delete appointment")
+      getByText(appointment, "There was an error while deleting...")
     ).toBeInTheDocument();
   });
 

@@ -1,7 +1,7 @@
 // Dependency Imports
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import axios from "../_mocks_/axios";
+// import axios from "../__mocks__/axios";
 
 // Styling Imports
 import "components/Application.scss";
